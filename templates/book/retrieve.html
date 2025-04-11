@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block title%} Retrieve {%endblock%}
+
+{%block h3%} class="selected"{%endblock%}
+
+{%block content%}
+{%if rows%}
+    <table align="center" cellpadding="8" class="tab1">
+        <caption><h1>Books_List</h1></caption>
+        <tr>
+            <th>Book_Id</th>
+            <th>Book_Name</th>
+            <th>View_Book</th>
+        </tr>
+        {%for r in rows%}
+            <tr>
+                <td>{{r.no}}</td>
+                <td>{{r.name}}</td>
+                <td>
+                    <a href="{%url 'view' r.no %}">View</a>
+                </td>
+            </tr>
+        {%endfor%}
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="6" >
+                <a href="{%url 'home'%}" ><button>Home</button></a>
+            </td>
+        </tr>
+        <tr>
+            <td>{{msg}}</td>
+        </tr>
+        <tr>
+            <td colspan="6" >
+                <a href="{%url 'create'%}" ><button>Add</button></a>
+            </td>
+        </tr>
+    </table>
+{%else%}
+    <h2>Books Not Available</h2>
+     <!-- {{rows}} -->
+{%endif%}
+{%endblock%}

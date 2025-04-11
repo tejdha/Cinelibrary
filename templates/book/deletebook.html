@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{%block title%} Delete Book {%endblock%}
+
+{%block h4%} class="selected"{%endblock%}
+
+{%block content%}
+{%if r%}
+    <table align="center" cellpadding="8" class="tab1">
+        <caption><h2>{{msg}}</h2></caption>
+        <tr>
+            <th>Book_Id</th>
+            <td>{{book_no}}</td>
+        </tr>
+        <tr>
+            <th>Book_Name</th>
+            <td>{{r.name}}</td>
+        </tr>        
+        <tr>
+            <td colspan="2" class="butt" rowspan="1">
+                <a href="{%url 'home'%}">
+                    <button>Home</button>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="butt">
+                <a href="{%url 'retrieve'%}" ><button>Back</button></a>
+            </td>
+        </tr>
+    </table>
+{%else%}
+    <h2>Books Not Available</h2>
+{%endif%}
+{%endblock%}
