@@ -8,7 +8,7 @@
 <body>
 <div>
   <header>
-    <h1><a href="{%url 'home'%}">Home</a></li> >Cine<span class="logo_colour">Library</span></a></h1>
+    <h1><a href="{%url 'home'%}">Cine<span class="logo_colour">Library</span></a></h1>
 <h2>Greatest cine library.</h2>
   </header>
     <nav>
@@ -20,19 +20,17 @@
       <list {% block h6%}class="#"{%endblock%}><a href="{%url 'updateb'%}">Update_Book</a></list>
     </nav>
 
-      {%block content%}
-      welcome to base page
-      {%endblock%}
-  <section>
-    <article>
-      <h2>
-        <P></P>
-      </h2>
-    </article>
-  </section>
-  <footer>
-    <p>CInelibrary</p>
-  </footer>
+    <section>
+      <article>
+        {%block content%}
+          welcome to base page
+        {%endblock%}
+      </article>
+    </section>
+    <hr>
+    <footer>
+      <h2>Cinelibrary | Where magic begins</h2>
+    </footer>
 </div>
 </body>
 </html>
